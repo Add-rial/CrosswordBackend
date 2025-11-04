@@ -17,7 +17,5 @@ type CrosswordAnswer struct{
     gorm.Model
     
     UserID uint 
-    Rows int
-    Columns int
-    Grid [][]byte `gorm:"type:json"`
+    Answers []UnitClue `gorm:"type:jsonb" json:"answers`
 }
