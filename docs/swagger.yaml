@@ -79,6 +79,137 @@ info:
   title: Crossword API
   version: "1.0"
 paths:
+  /admin/updateCrossword:
+    post:
+      consumes:
+      - application/json
+      description: Allows admin to upload or replace the crossword JSON file for the
+        current day.
+      parameters:
+      - description: Admin authentication key
+        in: header
+        name: X-Admin-Key
+        required: true
+        type: string
+      - description: Crossword JSON data
+        in: body
+        name: crossword
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Crossword uploaded successfully
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Invalid request body
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized (invalid admin key)
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Error updating crossword
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Upload or update the crossword puzzle
+      tags:
+      - Admin
+  /admin/updateScore:
+    post:
+      description: Runs the daily crossword scoring process. Compares every user's
+        stored crossword answers with the official solution and updates their total
+        scores accordingly.
+      parameters:
+      - description: Admin authentication key
+        in: header
+        name: X-Admin-Key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Scores updated successfully
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized (invalid admin key)
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Error loading solutions or updating scores
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Compare user answers and update scores
+      tags:
+      - Admin
+  /admin/updateSolution:
+    post:
+      consumes:
+      - application/json
+      description: Allows admin to upload the official solution JSON file after the
+        puzzle day ends.
+      parameters:
+      - description: Admin authentication key
+        in: header
+        name: X-Admin-Key
+        required: true
+        type: string
+      - description: Solution JSON data
+        in: body
+        name: solution
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Solution uploaded successfully
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Invalid request body
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized (invalid admin key)
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Error updating solution
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Upload or update the crossword solution
+      tags:
+      - Admin
   /crossword:
     get:
       description: Returns crossword grid data and clues from JSON file

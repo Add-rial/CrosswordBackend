@@ -9,6 +9,198 @@
     "host": "https://crosswordbackend.onrender.com/",
     "basePath": "/",
     "paths": {
+        "/admin/updateCrossword": {
+            "post": {
+                "description": "Allows admin to upload or replace the crossword JSON file for the current day.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Upload or update the crossword puzzle",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Admin authentication key",
+                        "name": "X-Admin-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Crossword JSON data",
+                        "name": "crossword",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Crossword uploaded successfully",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized (invalid admin key)",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error updating crossword",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/updateScore": {
+            "post": {
+                "description": "Runs the daily crossword scoring process. Compares every user's stored crossword answers with the official solution and updates their total scores accordingly.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Compare user answers and update scores",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Admin authentication key",
+                        "name": "X-Admin-Key",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Scores updated successfully",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized (invalid admin key)",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error loading solutions or updating scores",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/updateSolution": {
+            "post": {
+                "description": "Allows admin to upload the official solution JSON file after the puzzle day ends.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Upload or update the crossword solution",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Admin authentication key",
+                        "name": "X-Admin-Key",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Solution JSON data",
+                        "name": "solution",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Solution uploaded successfully",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized (invalid admin key)",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error updating solution",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/crossword": {
             "get": {
                 "description": "Returns crossword grid data and clues from JSON file",
