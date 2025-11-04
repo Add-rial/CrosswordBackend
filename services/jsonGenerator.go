@@ -8,7 +8,7 @@ import (
 )
 
 func JsonGenerator(){
-	file, err := os.OpenFile("crosswordJSON.json", os.O_CREATE|os.O_TRUNC, 0644)
+	file, err := os.OpenFile("crosswordJSON.json", os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0644)
 	if err != nil {
 		panic(err)
 	}
@@ -26,19 +26,19 @@ func JsonGenerator(){
 	defaultCrossword.Clues.Across = make([]model.UnitClue, acrossClues)
 	defaultCrossword.Clues.Down = make([]model.UnitClue, downClues)
 	defaultCrossword.Grid = make([][]model.Cell, rows) 
-	for i := range acrossClues{
+	for i := 0; i < acrossClues; i++{
 		defaultCrossword.Clues.Across[i].ClueID = i + 1
 		defaultCrossword.Clues.Across[i].ClueText = ""
 	}
 
-	for i := range downClues{
+	for i := 0; i < downClues; i++{
 		defaultCrossword.Clues.Down[i].ClueID = i + 1
 		defaultCrossword.Clues.Down[i].ClueText = ""
 	}
 
-	for i := range rows{
+	for i := 0; i < rows; i++{
 		defaultCrossword.Grid[i] = make([]model.Cell, columns)
-		for j := range columns{
+		for j := 0; j < columns; j++{
 			defaultCrossword.Grid[i][j].IsBlank = false
 			defaultCrossword.Grid[i][j].NumberAssociated = -1
 		}

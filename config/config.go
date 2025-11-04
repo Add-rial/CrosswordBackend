@@ -8,7 +8,7 @@ import (
 
 	"github.com/joho/godotenv"
 	"google.golang.org/genai"
-	"gorm.io/driver/sqlite"
+	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
@@ -18,11 +18,14 @@ var(
 )
 
 func InitDB(){
-	var err error
-	
-	DB, err = gorm.Open(sqlite.Open("gorm.db"), &gorm.Config{})
+	dsn := os.Getenv("DATABASE_URL")
+	if dsn == "" {
+		log.Fatal("DATABASE_URL not set")
+	}
+
+	DB, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
-		log.Fatalf("Failed to connect to database: %v", err)
+		log.Fatal("Failed to connect to Postgres:", err)
 	}
 
 	err = DB.AutoMigrate(&model.User{}, &model.CrosswordAnswer{})
