@@ -252,6 +252,18 @@
         }
     },
     "definitions": {
+        "gorm.DeletedAt": {
+            "type": "object",
+            "properties": {
+                "time": {
+                    "type": "string"
+                },
+                "valid": {
+                    "description": "Valid is true if Time is not NULL",
+                    "type": "boolean"
+                }
+            }
+        },
         "model.Cell": {
             "type": "object",
             "properties": {
@@ -304,7 +316,31 @@
             }
         },
         "model.CrosswordAnswer": {
-            "type": "object"
+            "description": "A user's crossword answer submission",
+            "type": "object",
+            "properties": {
+                "answers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.UnitClue"
+                    }
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "deletedAt": {
+                    "$ref": "#/definitions/gorm.DeletedAt"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "userID": {
+                    "type": "integer"
+                }
+            }
         },
         "model.UnitClue": {
             "description": "A singular clue with its index",
@@ -321,7 +357,37 @@
             }
         },
         "model.User": {
-            "type": "object"
+            "description": "User entity with unique email and optional crossword answer",
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "type": "string"
+                },
+                "dailyCrosswordAnswer": {
+                    "$ref": "#/definitions/model.CrosswordAnswer"
+                },
+                "deletedAt": {
+                    "$ref": "#/definitions/gorm.DeletedAt"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "user@example.com"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "score": {
+                    "type": "integer",
+                    "example": 0
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string",
+                    "example": "JohnDoe"
+                }
+            }
         }
     }
 }

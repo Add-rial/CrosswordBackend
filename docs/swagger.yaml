@@ -1,5 +1,13 @@
 basePath: /
 definitions:
+  gorm.DeletedAt:
+    properties:
+      time:
+        type: string
+      valid:
+        description: Valid is true if Time is not NULL
+        type: boolean
+    type: object
   model.Cell:
     properties:
       isBlank:
@@ -34,6 +42,22 @@ definitions:
         type: integer
     type: object
   model.CrosswordAnswer:
+    description: A user's crossword answer submission
+    properties:
+      answers:
+        items:
+          $ref: '#/definitions/model.UnitClue'
+        type: array
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      id:
+        type: integer
+      updatedAt:
+        type: string
+      userID:
+        type: integer
     type: object
   model.UnitClue:
     description: A singular clue with its index
@@ -46,6 +70,27 @@ definitions:
         type: string
     type: object
   model.User:
+    description: User entity with unique email and optional crossword answer
+    properties:
+      createdAt:
+        type: string
+      dailyCrosswordAnswer:
+        $ref: '#/definitions/model.CrosswordAnswer'
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      email:
+        example: user@example.com
+        type: string
+      id:
+        type: integer
+      score:
+        example: 0
+        type: integer
+      updatedAt:
+        type: string
+      username:
+        example: JohnDoe
+        type: string
     type: object
 host: localhost:8080
 info:
