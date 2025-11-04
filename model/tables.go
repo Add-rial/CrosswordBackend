@@ -6,7 +6,7 @@ import (
 
 // @Description User entity with unique email and optional crossword answer
 type User struct{
-    gorm.Model `swaggerignore:"true"`
+    gorm.Model `json:"-" swaggerignore:"true"`
 
     Email      string `gorm:"uniqueIndex;not null" example:"user@example.com"`
     Username       string `example:"JohnDoe"`
@@ -16,7 +16,7 @@ type User struct{
 
 // @Description A user's crossword answer submission
 type CrosswordAnswer struct{
-    gorm.Model `swaggerignore:"true"`
+    gorm.Model `json:"-" swaggerignore:"true"`
     
     UserID uint 
     Answers []UnitClue `gorm:"type:jsonb" json:"answers"`

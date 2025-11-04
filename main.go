@@ -3,13 +3,8 @@ package main
 // @title Crossword API
 // @version 1.0
 // @description Backend API for Crossword App 
-// @termsOfService http://swagger.io/terms/
 
-
-// @license.name MIT
-// @license.url https://opensource.org/licenses/MIT
-
-// @host localhost:8080
+// @host https://crosswordbackend.onrender.com/
 // @BasePath /
 
 import (
