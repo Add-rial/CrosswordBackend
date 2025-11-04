@@ -23,7 +23,8 @@ func InitDB(){
 		log.Fatal("DATABASE_URL not set")
 	}
 
-	DB, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	var err error
+	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatal("Failed to connect to Postgres:", err)
 	}

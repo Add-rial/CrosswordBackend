@@ -12,8 +12,8 @@ import (
 )
 
 func main(){
-	config.InitDB()
 	config.InitEnv()
+	config.InitDB()
 	services.JsonGenerator()
 
 	router := gin.Default()
