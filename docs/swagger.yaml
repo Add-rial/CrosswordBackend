@@ -1,13 +1,5 @@
 basePath: /
 definitions:
-  gorm.DeletedAt:
-    properties:
-      time:
-        type: string
-      valid:
-        description: Valid is true if Time is not NULL
-        type: boolean
-    type: object
   model.Cell:
     properties:
       isBlank:
@@ -48,15 +40,10 @@ definitions:
         items:
           $ref: '#/definitions/model.UnitClue'
         type: array
-      createdAt:
-        type: string
-      deletedAt:
-        $ref: '#/definitions/gorm.DeletedAt'
       id:
+        example: 1
         type: integer
-      updatedAt:
-        type: string
-      userID:
+      user_id:
         type: integer
     type: object
   model.UnitClue:
@@ -72,34 +59,23 @@ definitions:
   model.User:
     description: User entity with unique email and optional crossword answer
     properties:
-      createdAt:
-        type: string
-      dailyCrosswordAnswer:
-        $ref: '#/definitions/model.CrosswordAnswer'
-      deletedAt:
-        $ref: '#/definitions/gorm.DeletedAt'
       email:
         example: user@example.com
         type: string
       id:
+        example: 1
         type: integer
       score:
         example: 0
         type: integer
-      updatedAt:
-        type: string
       username:
         example: JohnDoe
         type: string
     type: object
-host: localhost:8080
+host: https://crosswordbackend.onrender.com/
 info:
   contact: {}
   description: Backend API for Crossword App
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
-  termsOfService: http://swagger.io/terms/
   title: Crossword API
   version: "1.0"
 paths:

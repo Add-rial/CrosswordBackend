@@ -9,12 +9,7 @@ const docTemplate = `{
     "info": {
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
-        "termsOfService": "http://swagger.io/terms/",
         "contact": {},
-        "license": {
-            "name": "MIT",
-            "url": "https://opensource.org/licenses/MIT"
-        },
         "version": "{{.Version}}"
     },
     "host": "{{.Host}}",
@@ -258,18 +253,6 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "gorm.DeletedAt": {
-            "type": "object",
-            "properties": {
-                "time": {
-                    "type": "string"
-                },
-                "valid": {
-                    "description": "Valid is true if Time is not NULL",
-                    "type": "boolean"
-                }
-            }
-        },
         "model.Cell": {
             "type": "object",
             "properties": {
@@ -331,19 +314,11 @@ const docTemplate = `{
                         "$ref": "#/definitions/model.UnitClue"
                     }
                 },
-                "createdAt": {
-                    "type": "string"
-                },
-                "deletedAt": {
-                    "$ref": "#/definitions/gorm.DeletedAt"
-                },
                 "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "example": 1
                 },
-                "updatedAt": {
-                    "type": "string"
-                },
-                "userID": {
+                "user_id": {
                     "type": "integer"
                 }
             }
@@ -366,28 +341,17 @@ const docTemplate = `{
             "description": "User entity with unique email and optional crossword answer",
             "type": "object",
             "properties": {
-                "createdAt": {
-                    "type": "string"
-                },
-                "dailyCrosswordAnswer": {
-                    "$ref": "#/definitions/model.CrosswordAnswer"
-                },
-                "deletedAt": {
-                    "$ref": "#/definitions/gorm.DeletedAt"
-                },
                 "email": {
                     "type": "string",
                     "example": "user@example.com"
                 },
                 "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "example": 1
                 },
                 "score": {
                     "type": "integer",
                     "example": 0
-                },
-                "updatedAt": {
-                    "type": "string"
                 },
                 "username": {
                     "type": "string",
@@ -401,7 +365,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:8080",
+	Host:             "https://crosswordbackend.onrender.com/",
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "Crossword API",

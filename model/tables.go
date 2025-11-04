@@ -1,24 +1,20 @@
 package model
 
-import (
-	"gorm.io/gorm"
-)
-
 // @Description User entity with unique email and optional crossword answer
 type User struct{
-    gorm.Model `json:"-" swaggerignore:"true"`
+    ID uint `gorm:"primaryKey" json:"id" example:"1"`
 
     Email      string `gorm:"uniqueIndex;not null" example:"user@example.com"`
     Username       string `example:"JohnDoe"`
     Score int `gorm:"default:0;not null" example:"0"`
-    DailyCrosswordAnswer CrosswordAnswer `gorm:"foreignKey:UserID"`
+    DailyCrosswordAnswer CrosswordAnswer `gorm:"foreignKey:UserID" swaggerignore:"true" json:"-"`
 }
 
 // @Description A user's crossword answer submission
 type CrosswordAnswer struct{
-    gorm.Model `json:"-" swaggerignore:"true"`
+    ID uint `gorm:"primaryKey" json:"id" example:"1"`
     
-    UserID uint 
+    UserID uint `json:"user_id"`
     Answers []UnitClue `gorm:"type:jsonb" json:"answers"`
 }
 

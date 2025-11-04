@@ -3,15 +3,10 @@
     "info": {
         "description": "Backend API for Crossword App",
         "title": "Crossword API",
-        "termsOfService": "http://swagger.io/terms/",
         "contact": {},
-        "license": {
-            "name": "MIT",
-            "url": "https://opensource.org/licenses/MIT"
-        },
         "version": "1.0"
     },
-    "host": "localhost:8080",
+    "host": "https://crosswordbackend.onrender.com/",
     "basePath": "/",
     "paths": {
         "/crossword": {
@@ -252,18 +247,6 @@
         }
     },
     "definitions": {
-        "gorm.DeletedAt": {
-            "type": "object",
-            "properties": {
-                "time": {
-                    "type": "string"
-                },
-                "valid": {
-                    "description": "Valid is true if Time is not NULL",
-                    "type": "boolean"
-                }
-            }
-        },
         "model.Cell": {
             "type": "object",
             "properties": {
@@ -325,19 +308,11 @@
                         "$ref": "#/definitions/model.UnitClue"
                     }
                 },
-                "createdAt": {
-                    "type": "string"
-                },
-                "deletedAt": {
-                    "$ref": "#/definitions/gorm.DeletedAt"
-                },
                 "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "example": 1
                 },
-                "updatedAt": {
-                    "type": "string"
-                },
-                "userID": {
+                "user_id": {
                     "type": "integer"
                 }
             }
@@ -360,28 +335,17 @@
             "description": "User entity with unique email and optional crossword answer",
             "type": "object",
             "properties": {
-                "createdAt": {
-                    "type": "string"
-                },
-                "dailyCrosswordAnswer": {
-                    "$ref": "#/definitions/model.CrosswordAnswer"
-                },
-                "deletedAt": {
-                    "$ref": "#/definitions/gorm.DeletedAt"
-                },
                 "email": {
                     "type": "string",
                     "example": "user@example.com"
                 },
                 "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "example": 1
                 },
                 "score": {
                     "type": "integer",
                     "example": 0
-                },
-                "updatedAt": {
-                    "type": "string"
                 },
                 "username": {
                     "type": "string",
