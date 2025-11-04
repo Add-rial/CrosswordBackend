@@ -98,7 +98,7 @@ func GetLeaderboard(c *gin.Context){
 }
 
 func GetCrossword(c *gin.Context){
-	file, err := os.ReadFile("crosswordOfTheDay")
+	file, err := os.ReadFile("crosswordJSON.json")
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Crossword not found"})
 		return
