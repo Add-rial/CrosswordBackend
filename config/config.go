@@ -16,6 +16,7 @@ var(
 	DB *gorm.DB
 	JwtKey []byte
 	AdminKey string
+	GoogleClientID string
 )
 
 func InitDB(){
@@ -44,6 +45,7 @@ func InitEnv() {
     }
 	JwtKey = []byte(os.Getenv("JWT_SECRET"))
 	AdminKey = os.Getenv("ADMIN_KEY")
+	GoogleClientID = os.Getenv("GOOGLE_CLIENT_ID")
 }
 
 func GetSchemaConfig() * genai.GenerateContentConfig{

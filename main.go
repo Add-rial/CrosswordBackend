@@ -30,12 +30,13 @@ func main(){
 
 	router.POST("/users/register", handlers.RegisterUser)
 	router.POST("/users/login", handlers.LoginUser)
+	router.POST("/auth/google", handlers.AuthWithGoogle)
 	router.GET("/leaderboard", handlers.GetLeaderboard)
 	router.GET("/crossword", handlers.GetCrossword)
-	auth := router.Group("/")
-	auth.Use(middleware.AuthMiddleware())
+	submitcrossword := router.Group("/")
+	submitcrossword.Use(middleware.AuthMiddleware())
 	{
-		auth.POST("/submitcrossword", handlers.SubmitCrossword)
+		submitcrossword.POST("/submitcrossword", handlers.SubmitCrossword)
 	}
 	admin := router.Group("/admin")
 	admin.Use(middleware.AdminMiddleware())

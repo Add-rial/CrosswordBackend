@@ -210,6 +210,43 @@ paths:
       summary: Upload or update the crossword solution
       tags:
       - Admin
+  /auth/google:
+    post:
+      consumes:
+      - application/json
+      description: Verifies Google token, auto-registers user if new, returns JWT
+      parameters:
+      - description: Google ID Token
+        in: body
+        name: token
+        required: true
+        schema:
+          additionalProperties:
+            type: string
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Authenticated successfully
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Invalid request format
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Invalid Google token
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Authenticate with Google
+      tags:
+      - Auth
   /crossword:
     get:
       description: Returns crossword grid data and clues from JSON file
