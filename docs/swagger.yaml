@@ -1,0 +1,213 @@
+basePath: /
+definitions:
+  model.Cell:
+    properties:
+      isBlank:
+        type: boolean
+      numberAssociated:
+        type: integer
+    type: object
+  model.Clues:
+    properties:
+      across:
+        items:
+          $ref: '#/definitions/model.UnitClue'
+        type: array
+      down:
+        items:
+          $ref: '#/definitions/model.UnitClue'
+        type: array
+    type: object
+  model.Crossword:
+    properties:
+      clues:
+        $ref: '#/definitions/model.Clues'
+      columns:
+        type: integer
+      grid:
+        items:
+          items:
+            $ref: '#/definitions/model.Cell'
+          type: array
+        type: array
+      rows:
+        type: integer
+    type: object
+  model.CrosswordAnswer:
+    type: object
+  model.UnitClue:
+    properties:
+      clueID:
+        type: integer
+      clueText:
+        type: string
+    type: object
+  model.User:
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Backend API for Crossword App
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  termsOfService: http://swagger.io/terms/
+  title: Crossword API
+  version: "1.0"
+paths:
+  /crossword:
+    get:
+      description: Returns crossword grid data and clues from JSON file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Crossword'
+        "500":
+          description: Crossword not found or parse error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get today's crossword
+      tags:
+      - Crossword
+  /leaderboard:
+    get:
+      description: Returns a list of users sorted by score in descending order
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.User'
+            type: array
+        "500":
+          description: Database error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get leaderboard
+      tags:
+      - Leaderboard
+  /submitcrossword:
+    post:
+      consumes:
+      - application/json
+      description: Stores or updates a user’s crossword answers. Requires JWT authentication.
+      parameters:
+      - description: Crossword answer data
+        in: body
+        name: crossword
+        required: true
+        schema:
+          $ref: '#/definitions/model.CrosswordAnswer'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Answer stored
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Invalid request format
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized or missing token
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Database error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Submit crossword answers
+      tags:
+      - Crossword
+  /users/login:
+    post:
+      consumes:
+      - application/json
+      description: Returns JWT token if user exists
+      parameters:
+      - description: User login info
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/model.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successful login
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Invalid request format
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: User not registered
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Log in existing user
+      tags:
+      - Auth
+  /users/register:
+    post:
+      consumes:
+      - application/json
+      description: Creates a new user if not registered and returns a JWT token. If
+        already registered, returns the user(no JWT token)
+      parameters:
+      - description: User info
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/model.User'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: User successfully registered
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Invalid request format
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Database or token error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Register a new user
+      tags:
+      - Auth
+swagger: "2.0"

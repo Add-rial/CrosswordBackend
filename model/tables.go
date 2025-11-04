@@ -4,6 +4,8 @@ import (
 	"gorm.io/gorm"
 )
 
+// User represents an application user
+// @Description User entity with unique email and optional crossword answer
 type User struct{
     gorm.Model
 
@@ -13,9 +15,11 @@ type User struct{
     DailyCrosswordAnswer CrosswordAnswer `gorm:"foreignKey:UserID"`
 }
 
+// CrosswordAnswer stores a user's crossword answers for the day
+// @Description A user's crossword answer submission
 type CrosswordAnswer struct{
     gorm.Model
     
     UserID uint 
-    Answers []UnitClue `gorm:"type:jsonb" json:"answers`
+    Answers []UnitClue `gorm:"type:jsonb" json:"answers"`
 }
