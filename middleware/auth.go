@@ -5,6 +5,7 @@ import (
     "net/http"
     "github.com/gin-gonic/gin"
     "CrosswordBackend/utils"
+    "CrosswordBackend/config"
 )
 
 func AuthMiddleware() gin.HandlerFunc {
@@ -25,6 +26,20 @@ func AuthMiddleware() gin.HandlerFunc {
         }
 
         c.Set("userID", userID)
+        c.Next()
+    }
+}
+
+func AdminMiddleware() gin.HandlerFunc {
+    return func(c *gin.Context) {
+        key := c.GetHeader("X-Admin-Key")
+        expectedKey := config.AdminKey
+        
+        if key == "" || key != expectedKey {
+            c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "unauthorized"})
+            return
+        }
+        
         c.Next()
     }
 }

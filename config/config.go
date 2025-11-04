@@ -15,6 +15,7 @@ import (
 var(
 	DB *gorm.DB
 	JwtKey []byte
+	AdminKey string
 )
 
 func InitDB(){
@@ -42,6 +43,7 @@ func InitEnv() {
         log.Println("No .env file found, using system environment variables")
     }
 	JwtKey = []byte(os.Getenv("JWT_SECRET"))
+	AdminKey = os.Getenv("ADMIN_KEY")
 }
 
 func GetSchemaConfig() * genai.GenerateContentConfig{
