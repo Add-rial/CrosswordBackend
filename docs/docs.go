@@ -313,13 +313,16 @@ const docTemplate = `{
             "type": "object"
         },
         "model.UnitClue": {
+            "description": "A singular clue with its index",
             "type": "object",
             "properties": {
                 "clueID": {
-                    "type": "integer"
+                    "type": "integer",
+                    "example": 1
                 },
                 "clueText": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "APPLE"
                 }
             }
         },

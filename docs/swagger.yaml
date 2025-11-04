@@ -36,10 +36,13 @@ definitions:
   model.CrosswordAnswer:
     type: object
   model.UnitClue:
+    description: A singular clue with its index
     properties:
       clueID:
+        example: 1
         type: integer
       clueText:
+        example: APPLE
         type: string
     type: object
   model.User:

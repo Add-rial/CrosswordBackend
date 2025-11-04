@@ -5,10 +5,6 @@ type Cell struct{
     NumberAssociated int
 }
 
-type UnitClue struct{
-    ClueID int 
-    ClueText string
-}
 type Clues struct{
     Across []UnitClue
     Down []UnitClue
