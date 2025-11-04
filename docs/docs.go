@@ -227,10 +227,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/model.TokenSample"
                         }
                     }
                 ],
@@ -561,13 +558,15 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/model.UnitClue"
                     }
-                },
-                "id": {
-                    "type": "integer",
-                    "example": 1
-                },
-                "user_id": {
-                    "type": "integer"
+                }
+            }
+        },
+        "model.TokenSample": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "example": "your_token"
                 }
             }
         },

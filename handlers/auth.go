@@ -112,7 +112,7 @@ func LoginUser(c *gin.Context){
 // @Tags Auth
 // @Accept  json
 // @Produce  json
-// @Param token body map[string]string true "Google ID Token"
+// @Param token body model.TokenSample true "Google ID Token"
 // @Success 200 {object} map[string]interface{} "Authenticated successfully"
 // @Failure 400 {object} map[string]string "Invalid request format"
 // @Failure 401 {object} map[string]string "Invalid Google token"

@@ -12,9 +12,9 @@ type User struct{
 
 // @Description A user's crossword answer submission
 type CrosswordAnswer struct{
-    ID uint `gorm:"primaryKey" json:"id" example:"1"`
+    ID uint `gorm:"primaryKey" json:"id,omitempty" swaggerignore:"true" example:"1"`
     
-    UserID uint `json:"user_id"`
+    UserID uint `json:"user_id,omitempty" swaggerignore:"true"`
     Answers []UnitClue `gorm:"type:jsonb" json:"answers"`
 }
 

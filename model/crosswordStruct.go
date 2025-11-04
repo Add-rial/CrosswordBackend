@@ -16,3 +16,7 @@ type Crossword struct{
     Columns int
     Grid [][]Cell
 }
+
+type TokenSample struct{
+    Token string `json:"token" example:"your_token"`
+}
