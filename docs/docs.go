@@ -563,7 +563,8 @@ const docTemplate = `{
                     }
                 },
                 "crossword_id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "example": 1
                 }
             }
         },

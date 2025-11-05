@@ -43,6 +43,7 @@ definitions:
           $ref: '#/definitions/model.UnitClue'
         type: array
       crossword_id:
+        example: 1
         type: integer
     type: object
   model.TokenSample:
