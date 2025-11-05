@@ -24,6 +24,8 @@ definitions:
         $ref: '#/definitions/model.Clues'
       columns:
         type: integer
+      crosswordID:
+        type: integer
       grid:
         items:
           items:
@@ -40,6 +42,8 @@ definitions:
         items:
           $ref: '#/definitions/model.UnitClue'
         type: array
+      crossword_id:
+        type: integer
     type: object
   model.TokenSample:
     properties:

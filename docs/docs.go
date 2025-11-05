@@ -535,6 +535,9 @@ const docTemplate = `{
                 "columns": {
                     "type": "integer"
                 },
+                "crosswordID": {
+                    "type": "integer"
+                },
                 "grid": {
                     "type": "array",
                     "items": {
@@ -558,6 +561,9 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/model.UnitClue"
                     }
+                },
+                "crossword_id": {
+                    "type": "integer"
                 }
             }
         },

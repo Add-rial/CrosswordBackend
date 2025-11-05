@@ -14,10 +14,10 @@ func CrosswordGenerator(){
 	}
 	defer file.Close()
 
-	rows := 7
-	columns := 7
-	acrossClues := 5
-	downClues := 5
+	rows := 14
+	columns := 13
+	acrossClues := 6
+	downClues := 4
 	id := 1
 
 
@@ -41,7 +41,7 @@ func CrosswordGenerator(){
 	for i := 0; i < rows; i++{
 		templateCrossword.Grid[i] = make([]model.Cell, columns)
 		for j := 0; j < columns; j++{
-			templateCrossword.Grid[i][j].IsBlank = false
+			templateCrossword.Grid[i][j].IsBlank = true
 			templateCrossword.Grid[i][j].NumberAssociated = -1
 		}
 	}

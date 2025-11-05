@@ -529,6 +529,9 @@
                 "columns": {
                     "type": "integer"
                 },
+                "crosswordID": {
+                    "type": "integer"
+                },
                 "grid": {
                     "type": "array",
                     "items": {
@@ -552,6 +555,9 @@
                     "items": {
                         "$ref": "#/definitions/model.UnitClue"
                     }
+                },
+                "crossword_id": {
+                    "type": "integer"
                 }
             }
         },

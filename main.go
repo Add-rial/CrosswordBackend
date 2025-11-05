@@ -20,19 +20,21 @@ import (
 	"CrosswordBackend/config"
 	"CrosswordBackend/handlers"
 	"CrosswordBackend/middleware"
-	"CrosswordBackend/services"
 )
 
 func main(){
-	services.CrosswordGenerator()
-	services.SolutionGenerator()
 	config.InitEnv()
 	config.InitDB()
-	config.InitCORS()
 
 	docs.SwaggerInfo.BasePath = "/"
 	router := gin.Default()
-	router.Use(cors.New(config.CORSconfig))
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"https://crosswordbycc.netlify.app/"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization", "X-Admin-Key"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+	}))
 
 	router.POST("/users/register", handlers.RegisterUser)
 	router.POST("/users/login", handlers.LoginUser)

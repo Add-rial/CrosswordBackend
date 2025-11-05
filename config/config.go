@@ -10,7 +10,6 @@ import (
 	"google.golang.org/genai"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"github.com/gin-contrib/cors"
 )
 
 var(
@@ -18,7 +17,6 @@ var(
 	JwtKey []byte
 	AdminKey string
 	GoogleClientID string
-	CORSconfig cors.Config
 )
 
 func InitDB(){
@@ -48,16 +46,6 @@ func InitEnv(){
 	JwtKey = []byte(os.Getenv("JWT_SECRET"))
 	AdminKey = os.Getenv("ADMIN_KEY")
 	GoogleClientID = os.Getenv("GOOGLE_CLIENT_ID")
-}
-
-func InitCORS(){
-	CORSconfig = cors.Config{
-	AllowOrigins:     []string{"https://crosswordbycc.netlify.app/"},
-    AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
-    AllowHeaders:     []string{"Origin", "Content-Type", "Authorization", "X-Admin-Key"},
-    ExposeHeaders:    []string{"Content-Length"},
-    AllowCredentials: true,
-}
 }
 
 func GetSchemaConfig() * genai.GenerateContentConfig{
