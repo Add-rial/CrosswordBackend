@@ -10,6 +10,7 @@ import (
 	"google.golang.org/genai"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"github.com/gin-contrib/cors"
 )
 
 var(
@@ -17,6 +18,7 @@ var(
 	JwtKey []byte
 	AdminKey string
 	GoogleClientID string
+	CORSconfig cors.Config
 )
 
 func InitDB(){
@@ -39,13 +41,23 @@ func InitDB(){
 	log.Println("Database connection and migration successful.")
 }
 
-func InitEnv() {
+func InitEnv(){
     if err := godotenv.Load(); err != nil {
         log.Println("No .env file found, using system environment variables")
     }
 	JwtKey = []byte(os.Getenv("JWT_SECRET"))
 	AdminKey = os.Getenv("ADMIN_KEY")
 	GoogleClientID = os.Getenv("GOOGLE_CLIENT_ID")
+}
+
+func InitCORS(){
+	CORSconfig = cors.Config{
+	AllowOrigins:     []string{"https://crosswordbycc.netlify.app/"},
+    AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
+    AllowHeaders:     []string{"Origin", "Content-Type", "Authorization", "X-Admin-Key"},
+    ExposeHeaders:    []string{"Content-Length"},
+    AllowCredentials: true,
+}
 }
 
 func GetSchemaConfig() * genai.GenerateContentConfig{
