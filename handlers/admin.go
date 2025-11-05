@@ -67,11 +67,25 @@ func UpdateScore(c *gin.Context){
 
 	var answers []model.CrosswordAnswer
 	config.DB.Where("crossword_id = ?", crosswordid).Find(&answers)
+	tx := config.DB.Begin()
 
 	for _, ans := range answers{
 		score := services.CompareAnswer(ans.Answers, solution)
-		config.DB.Model(&model.User{}).Where("id = ?", ans.UserID).
-			Update("score", gorm.Expr("score + ?", score))
+		if err := tx.Model(&model.User{}).
+            Where("id = ?", ans.UserID).
+            Update("score", gorm.Expr("score + ?", score)).Error; err != nil {
+            tx.Rollback()
+            c.JSON(http.StatusInternalServerError, gin.H{"error": "Score update failed"})
+            return
+        }
+
+        if err := tx.
+            Where("user_id = ? AND crossword_id = ?", ans.UserID, ans.CrosswordID).
+            Delete(&model.CrosswordAnswer{}).Error; err != nil {
+            tx.Rollback()
+            c.JSON(http.StatusInternalServerError, gin.H{"error": "Deletion failed"})
+            return
+        }
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "Scores updated successfully"})
