@@ -20,9 +20,12 @@ import (
 	"CrosswordBackend/config"
 	"CrosswordBackend/handlers"
 	"CrosswordBackend/middleware"
+	"CrosswordBackend/services"
 )
 
 func main(){
+	services.CrosswordGenerator()
+	services.SolutionGenerator()
 	config.InitEnv()
 	config.InitDB()
 	config.InitCORS()

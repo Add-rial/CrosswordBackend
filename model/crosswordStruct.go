@@ -15,8 +15,14 @@ type Crossword struct{
     Rows int
     Columns int
     Grid [][]Cell
+    CrosswordID int
 }
 
 type TokenSample struct{
     Token string `json:"token" example:"your_token"`
+}
+
+type CrosswordSolution struct{
+    Sol []UnitClue `json:"sol"`
+    Id int `json:"crosswordid"`
 }

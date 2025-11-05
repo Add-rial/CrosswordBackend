@@ -18,6 +18,7 @@ func CrosswordGenerator(){
 	columns := 7
 	acrossClues := 5
 	downClues := 5
+	id := 1
 
 
 	templateCrossword := model.Crossword{}
@@ -26,6 +27,7 @@ func CrosswordGenerator(){
 	templateCrossword.Clues.Across = make([]model.UnitClue, acrossClues)
 	templateCrossword.Clues.Down = make([]model.UnitClue, downClues)
 	templateCrossword.Grid = make([][]model.Cell, rows) 
+	templateCrossword.CrosswordID = id
 	for i := 0; i < acrossClues; i++{
 		templateCrossword.Clues.Across[i].ClueID = i + 1
 		templateCrossword.Clues.Across[i].ClueText = ""
@@ -44,7 +46,7 @@ func CrosswordGenerator(){
 		}
 	}
 
-	data, _ := json.Marshal(templateCrossword)
+	data, _ := json.MarshalIndent(templateCrossword, " ", "	")
 	_, err = file.Write(data)
 	if err != nil {
 		panic(err)
@@ -59,14 +61,16 @@ func SolutionGenerator(){
 	defer file.Close()
 
 	clues := 10
-	templateSolution := []model.UnitClue{}
+	var templateSolution model.CrosswordSolution
+	templateSolution.Sol = make([]model.UnitClue, clues)
+	templateSolution.Id = 1
 
 	for i := 0; i < clues; i++{
-		templateSolution[i].ClueID = i + 1
-		templateSolution[i].ClueText = ""
+		templateSolution.Sol[i].ClueID = i + 1
+		templateSolution.Sol[i].ClueText = ""
 	}
 
-	data, _ := json.Marshal(templateSolution)
+	data, _ := json.MarshalIndent(templateSolution, " ", "	")
 	_, err = file.Write(data)
 	if err != nil {
 		panic(err)

@@ -15,6 +15,7 @@ type CrosswordAnswer struct{
     ID uint `gorm:"primaryKey" json:"id,omitempty" swaggerignore:"true" example:"1"`
     
     UserID uint `json:"user_id,omitempty" swaggerignore:"true"`
+    CrosswordID uint `json:"crossword_id"`
     Answers []UnitClue `gorm:"type:jsonb" json:"answers"`
 }
 

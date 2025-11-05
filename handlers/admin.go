@@ -60,13 +60,13 @@ func UpdateSolution(c *gin.Context){
 func UpdateScore(c *gin.Context){
 	log.Println("Running daily crossword scoring task...")
 
-	solution, err := services.LoadOfficialSolution()
+	solution, crosswordid, err := services.LoadOfficialSolution()
 	if err != nil{
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "Error loadind solutions"})
 	}
 
 	var answers []model.CrosswordAnswer
-	config.DB.Find(&answers)
+	config.DB.Where("crossword_id = ?", crosswordid).Find(&answers)
 
 	for _, ans := range answers{
 		score := services.CompareAnswer(ans.Answers, solution)

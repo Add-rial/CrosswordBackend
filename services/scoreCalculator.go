@@ -7,17 +7,18 @@ import (
 	"os"
 )
 
-func LoadOfficialSolution() ([]model.UnitClue, error){
+func LoadOfficialSolution() ([]model.UnitClue, int, error){
 	file, err := os.ReadFile("solutionJSON.json")
 	if err != nil {
 		log.Println("Solutions haven't been uploaded")
 	}
-	var sol []model.UnitClue
-	err = json.Unmarshal(file, &sol)
+
+	var jsonExtacted model.CrosswordSolution
+	err = json.Unmarshal(file, &jsonExtacted)
 	if err != nil {
 		log.Println("Error extracting soln:")
 	}
-	return sol, err
+	return jsonExtacted.Sol, jsonExtacted.Id, err
 }
 
 func CompareAnswer(userAns []model.UnitClue, sol []model.UnitClue) int{

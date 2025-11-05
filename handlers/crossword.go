@@ -63,7 +63,7 @@ func SubmitCrossword(c *gin.Context){
 	input.UserID = userID
 
 	var existingAnswer model.CrosswordAnswer
-	result := config.DB.Where("user_id = ?", userID).Assign(input).FirstOrCreate(&existingAnswer)
+	result := config.DB.Where("user_id = ? AND crossword_id = ?", userID, input.CrosswordID).Assign(input).FirstOrCreate(&existingAnswer)
 
     if result.Error != nil {
         c.JSON(http.StatusInternalServerError, gin.H{"error": "Database error"})

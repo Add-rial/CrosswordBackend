@@ -1,1 +1,263 @@
-{"Clues":{"Across":[{"ClueID":1,"ClueText":""},{"ClueID":2,"ClueText":""},{"ClueID":3,"ClueText":""},{"ClueID":4,"ClueText":""},{"ClueID":5,"ClueText":""}],"Down":[{"ClueID":1,"ClueText":""},{"ClueID":2,"ClueText":""},{"ClueID":3,"ClueText":""},{"ClueID":4,"ClueText":""},{"ClueID":5,"ClueText":""}]},"Rows":7,"Columns":7,"Grid":[[{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1}],[{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1}],[{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1}],[{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1}],[{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1}],[{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1}],[{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1},{"IsBlank":false,"NumberAssociated":-1}]]}
+{
+ 	"Clues": {
+ 		"Across": [
+ 			{
+ 				"ClueID": 1,
+ 				"ClueText": ""
+ 			},
+ 			{
+ 				"ClueID": 2,
+ 				"ClueText": ""
+ 			},
+ 			{
+ 				"ClueID": 3,
+ 				"ClueText": ""
+ 			},
+ 			{
+ 				"ClueID": 4,
+ 				"ClueText": ""
+ 			},
+ 			{
+ 				"ClueID": 5,
+ 				"ClueText": ""
+ 			}
+ 		],
+ 		"Down": [
+ 			{
+ 				"ClueID": 1,
+ 				"ClueText": ""
+ 			},
+ 			{
+ 				"ClueID": 2,
+ 				"ClueText": ""
+ 			},
+ 			{
+ 				"ClueID": 3,
+ 				"ClueText": ""
+ 			},
+ 			{
+ 				"ClueID": 4,
+ 				"ClueText": ""
+ 			},
+ 			{
+ 				"ClueID": 5,
+ 				"ClueText": ""
+ 			}
+ 		]
+ 	},
+ 	"Rows": 7,
+ 	"Columns": 7,
+ 	"Grid": [
+ 		[
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			}
+ 		]
+ 	],
+ 	"CrosswordID": 1
+ }
