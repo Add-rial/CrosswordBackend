@@ -24,8 +24,13 @@ func ReturnScore(c *gin.Context){
 		return
 	}
 
-	if err := config.DB.Where("email = ?", b.Email).Update("score", gorm.Expr("score + ?", 5)).Error; err != nil{
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err})
+	if err := config.DB.Model(&model.User{}).Where("email = ?", b.Email).Update("score", gorm.Expr("score + ?", 5)).Error; err != nil{
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	if err := config.DB.Where("email = ?", b.Email).First(&userInDB).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not fetch updated user"})
 		return
 	}
 
