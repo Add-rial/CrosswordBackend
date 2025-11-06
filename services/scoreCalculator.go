@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"log"
 	"os"
+	"strings"
 )
 
 func LoadOfficialSolution() ([]model.UnitClue, int, error){
@@ -24,7 +25,7 @@ func LoadOfficialSolution() ([]model.UnitClue, int, error){
 func CompareAnswer(userAns []model.UnitClue, sol []model.UnitClue) int{
 	score := 0
 	for k, clue := range sol{
-		if(userAns[k].ClueText == clue.ClueText){
+		if strings.EqualFold(userAns[k].ClueText, clue.ClueText){
 			score += 1
 		}
 	}
