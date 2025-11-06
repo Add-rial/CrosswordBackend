@@ -66,14 +66,6 @@ func UpdateScore(c *gin.Context){
 	}
 
 	var answers []model.CrosswordAnswer
-	config.DB.Where("crossword_id = ?", crosswordid).Find(&answers)
-	log.Printf("Found %d crossword answers", len(answers))
-
-	solMap := make(map[int]string)
-	for _, clue := range solution {
-		solMap[clue.ClueID] = strings.TrimSpace(clue.ClueText)
-	}
-
 	tx := config.DB.Begin()
 	defer func() {
 		if r := recover(); r != nil {
@@ -81,21 +73,30 @@ func UpdateScore(c *gin.Context){
 			panic(r)
 		}
 	}()
-	var scoreToAdd int
+	tx.Where("crossword_id = ?", crosswordid).Find(&answers)
+	log.Printf("Found %d crossword answers", len(answers))
+
+	solMap := make(map[int]string)
+	for _, clue := range solution {
+		solMap[clue.ClueID] = strings.TrimSpace(clue.ClueText)
+	}
+
 	for _, ans := range answers{
 		score := services.CompareAnswer(ans.Answers, solMap)
-		scoreToAdd = score
+		log.Printf("User %d: score to add = %d", ans.UserID, score)
 		if err := tx.Model(&model.User{}).
             Where("id = ?", ans.UserID).
             Update("score", gorm.Expr("score + ?", score)).Error; err != nil {
+			log.Println(err)
             tx.Rollback()
             c.JSON(http.StatusInternalServerError, gin.H{"error": "Score update failed"})
             return
         }
-
+		log.Printf("Loaded crossword ID: %v | Answer crossword ID: %v", crosswordid, ans.CrosswordID)
         if err := tx.
             Where("user_id = ? AND crossword_id = ?", ans.UserID, ans.CrosswordID).
             Delete(&model.CrosswordAnswer{}).Error; err != nil {
+			log.Println(err)
             tx.Rollback()
             c.JSON(http.StatusInternalServerError, gin.H{"error": "Deletion failed"})
             return
@@ -106,7 +107,11 @@ func UpdateScore(c *gin.Context){
 		return
 	}
 
+	var newAnswers []model.CrosswordAnswer
+	config.DB.Where("crossword_id = ?", crosswordid).Find(&newAnswers)
+	log.Printf("After commit: %d answers remaining", len(newAnswers))
+
 	var userInDB model.User
 	config.DB.Where("email = ?", "f20241298@pilani.bits-pilani.ac.in").First(&userInDB)
-	c.JSON(http.StatusOK, gin.H{"message": "Scores updated successfully", "Score": userInDB.Score, "Score To Add": scoreToAdd})
+	c.JSON(http.StatusOK, gin.H{"message": "Scores updated successfully", "Score": userInDB.Score})
 }
