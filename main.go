@@ -41,7 +41,7 @@ func main(){
 	router.POST("/users/login", handlers.LoginUser)
 	router.POST("/auth/google", handlers.AuthWithGoogle)
 	router.GET("/leaderboard", handlers.GetLeaderboard)
-	router.POST("/crossword", handlers.GetCrossword)
+	router.GET("/crossword", handlers.GetCrossword)
 	submitcrossword := router.Group("/")
 	submitcrossword.Use(middleware.AuthMiddleware())
 	{
