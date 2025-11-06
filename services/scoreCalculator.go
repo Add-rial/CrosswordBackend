@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func LoadOfficialSolution() ([]model.UnitClue, int, error){
+func LoadOfficialSolution() ([]model.UnitClue, uint, error){
 	file, err := os.ReadFile("solutionJSON.json")
 	if err != nil {
 		log.Println("Solutions haven't been uploaded")

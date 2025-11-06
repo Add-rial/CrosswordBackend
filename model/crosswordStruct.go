@@ -24,5 +24,5 @@ type TokenSample struct{
 
 type CrosswordSolution struct{
     Sol []UnitClue `json:"sol"`
-    Id int `json:"crosswordid"`
+    Id uint `json:"crosswordid"`
 }
