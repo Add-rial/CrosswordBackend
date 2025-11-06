@@ -40,7 +40,7 @@ func ReturnScore(c *gin.Context){
 func SeeSubmittedCrossword(c *gin.Context){
 	var userInDB model.CrosswordAnswer
 	if err := config.DB.Model(model.CrosswordAnswer{}).
-				Where("user_id = ? AND crossword_id = ?", 3, 1).First(&userInDB); err != nil{
+				Where("crossword_id = ?", 1).First(&userInDB); err != nil{
 					c.JSON(http.StatusInternalServerError, gin.H{"error": "coulnd't fetch the crossword"})
 					return
 				}
