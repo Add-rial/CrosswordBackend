@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"os"
 
@@ -70,5 +71,6 @@ func SubmitCrossword(c *gin.Context){
         return
     }
 
+	log.Println("Submitted crossword:", existingAnswer)
 	c.JSON(http.StatusOK, gin.H{"message": "Answer stored"})
 }
