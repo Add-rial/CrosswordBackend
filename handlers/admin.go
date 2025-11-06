@@ -92,7 +92,7 @@ func UpdateScore(c *gin.Context){
             c.JSON(http.StatusInternalServerError, gin.H{"error": "Score update failed"})
             return
         }
-		log.Printf("Loaded crossword ID: %v | Answer crossword ID: %v", crosswordid, ans.CrosswordID)
+		log.Printf("Loaded crossword ID: %t | Answer crossword ID: %t", crosswordid, ans.CrosswordID)
         if err := tx.
             Where("user_id = ? AND crossword_id = ?", ans.UserID, ans.CrosswordID).
             Delete(&model.CrosswordAnswer{}).Error; err != nil {
