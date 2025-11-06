@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
 func ReturnScore(c *gin.Context){
@@ -20,6 +21,11 @@ func ReturnScore(c *gin.Context){
 	var userInDB model.User
 	if err := config.DB.Where("email = ?", b.Email).First(&userInDB).Error; err != nil{
 		c.JSON(http.StatusNotFound, gin.H{"error": "User not registered"})
+		return
+	}
+
+	if err := config.DB.Where("email = ?", b.Email).Update("score", gorm.Expr("score + ?", 5)).Error; err != nil{
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error updating"})
 		return
 	}
 
