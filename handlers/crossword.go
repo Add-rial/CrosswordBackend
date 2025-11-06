@@ -36,19 +36,23 @@ func GetCrossword(c *gin.Context){
 	c.JSON(http.StatusOK, crossword)
 }
 
-// SubmitCrossword godoc
+// SubmitCrossword handles the submission of crossword answers by a logged-in user.
+//
 // @Summary Submit crossword answers
-// @Description Stores or updates a user’s crossword answers. Requires JWT authentication.
+// @Description Accepts a JSON payload of crossword answers for a specific crossword and stores it in the database. 
+// Ensures that each user can only submit answers once per crossword. If a user attempts multiple submissions 
+// for the same crossword, the request is rejected.
+//
 // @Tags Crossword
-// @Security BearerAuth
-// @Accept  json
-// @Produce  json
-// @Param crossword body model.CrosswordAnswer true "Crossword answer data"
-// @Success 200 {object} map[string]string "Answer stored"
-// @Failure 400 {object} map[string]string "Invalid request format"
-// @Failure 401 {object} map[string]string "Unauthorized or missing token"
-// @Failure 500 {object} map[string]string "Database error"
-// @Router /submitcrossword [post]
+// @Accept json
+// @Produce json
+// @Param Authorization header string true "JWT token"
+// @Param request body model.CrosswordAnswer true "Crossword answer submission"
+// @Success 200 {object} map[string]string "{"message": "Answer stored"}"
+// @Failure 400 {object} map[string]string "Possible causes:\n- Invalid JSON format in request body\n- User has already submitted answers for this crossword"
+// @Failure 401 {object} map[string]string "{"error": "User not found in context"}"
+// @Failure 500 {object} map[string]string "{"error": "Database error"}"
+// @Router /crossword/submit [post]
 func SubmitCrossword(c *gin.Context){
 	userIDVal, exists := c.Get("userID")
     if !exists {
