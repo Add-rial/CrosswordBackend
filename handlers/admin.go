@@ -67,6 +67,7 @@ func UpdateScore(c *gin.Context){
 
 	var answers []model.CrosswordAnswer
 	config.DB.Where("crossword_id = ?", crosswordid).Find(&answers)
+	log.Printf("Found %d crossword answers", len(answers))
 
 	solMap := make(map[int]string)
 	for _, clue := range solution {
