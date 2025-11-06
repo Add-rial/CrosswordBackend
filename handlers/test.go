@@ -3,6 +3,7 @@ package handlers
 import (
 	"CrosswordBackend/config"
 	"CrosswordBackend/model"
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -40,7 +41,8 @@ func ReturnScore(c *gin.Context){
 func SeeSubmittedCrossword(c *gin.Context){
 	var userInDB model.CrosswordAnswer
 	if err := config.DB.Model(model.CrosswordAnswer{}).
-				Where("crossword_id = ?", 1).First(&userInDB); err != nil{
+				Where("crossword_id = ?", 1).First(&userInDB).Error; err != nil{
+					log.Println("Fetch error:", err)
 					c.JSON(http.StatusInternalServerError, gin.H{"error": "coulnd't fetch the crossword"})
 					return
 				}
