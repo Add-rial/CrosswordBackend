@@ -1,7 +1,9 @@
 package handlers
 
 import (
+	"bytes"
 	"encoding/json"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -56,6 +58,10 @@ func SubmitCrossword(c *gin.Context){
     }
     userID := userIDVal.(uint)
 
+	body, _ := io.ReadAll(c.Request.Body)
+    log.Println("Raw incoming JSON:", string(body))
+    c.Request.Body = io.NopCloser(bytes.NewBuffer(body))
+
 	var input model.CrosswordAnswer
 	if err := c.ShouldBindJSON(&input); err != nil{
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request format"})
@@ -71,6 +77,7 @@ func SubmitCrossword(c *gin.Context){
         return
     }
 
+	config.DB.Where("user_id = ? AND crossword_id = ?", userID, input.CrosswordID).First(&existingAnswer)
 	log.Println("Submitted crossword:", existingAnswer)
 	c.JSON(http.StatusOK, gin.H{"message": "Answer stored"})
 }
