@@ -270,6 +270,55 @@ paths:
       summary: Get today's crossword
       tags:
       - Crossword
+  /crossword/submit:
+    post:
+      consumes:
+      - application/json
+      description: Accepts a JSON payload of crossword answers for a specific crossword
+        and stores it in the database.
+      parameters:
+      - description: JWT token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Crossword answer submission
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/model.CrosswordAnswer'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"message": "Answer stored"}'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Possible causes:\n- Invalid JSON format in request body\n-
+            User has already submitted answers for this crossword
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: '{"error": "User not found in context"}'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: '{"error": "Database error"}'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Submit crossword answers
+      tags:
+      - Crossword
   /getsolution:
     post:
       consumes:
@@ -327,50 +376,6 @@ paths:
       summary: Get leaderboard
       tags:
       - Leaderboard
-  /submitcrossword:
-    post:
-      consumes:
-      - application/json
-      description: Stores or updates a user’s crossword answers. Requires JWT authentication.
-      parameters:
-      - description: Crossword answer data
-        in: body
-        name: crossword
-        required: true
-        schema:
-          $ref: '#/definitions/model.CrosswordAnswer'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: Answer stored
-          schema:
-            additionalProperties:
-              type: string
-            type: object
-        "400":
-          description: Invalid request format
-          schema:
-            additionalProperties:
-              type: string
-            type: object
-        "401":
-          description: Unauthorized or missing token
-          schema:
-            additionalProperties:
-              type: string
-            type: object
-        "500":
-          description: Database error
-          schema:
-            additionalProperties:
-              type: string
-            type: object
-      security:
-      - BearerAuth: []
-      summary: Submit crossword answers
-      tags:
-      - Crossword
   /users/login:
     post:
       consumes:

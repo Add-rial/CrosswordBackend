@@ -289,6 +289,77 @@ const docTemplate = `{
                 }
             }
         },
+        "/crossword/submit": {
+            "post": {
+                "description": "Accepts a JSON payload of crossword answers for a specific crossword and stores it in the database.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Crossword"
+                ],
+                "summary": "Submit crossword answers",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "JWT token",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Crossword answer submission",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.CrosswordAnswer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"message\": \"Answer stored\"}",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Possible causes:\\n- Invalid JSON format in request body\\n- User has already submitted answers for this crossword",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "{\"error\": \"User not found in context\"}",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "{\"error\": \"Database error\"}",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/getsolution": {
             "post": {
                 "description": "Fetches both the crossword question (grid, clues, etc.) and the corresponding solution for a given crossword ID.",
@@ -359,75 +430,6 @@ const docTemplate = `{
                             "type": "array",
                             "items": {
                                 "$ref": "#/definitions/model.User"
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Database error",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/submitcrossword": {
-            "post": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Stores or updates a user’s crossword answers. Requires JWT authentication.",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Crossword"
-                ],
-                "summary": "Submit crossword answers",
-                "parameters": [
-                    {
-                        "description": "Crossword answer data",
-                        "name": "crossword",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/model.CrosswordAnswer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Answer stored",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request format",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized or missing token",
-                        "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
                             }
                         }
                     },
