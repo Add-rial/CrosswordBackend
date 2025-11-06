@@ -25,7 +25,7 @@ func ReturnScore(c *gin.Context){
 	}
 
 	if err := config.DB.Where("email = ?", b.Email).Update("score", gorm.Expr("score + ?", 5)).Error; err != nil{
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error updating"})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err})
 		return
 	}
 
