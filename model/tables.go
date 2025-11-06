@@ -1,5 +1,11 @@
 package model
 
+import (
+    "database/sql/driver"
+    "encoding/json"
+    "log"
+)
+
 // @Description User entity with unique email and optional crossword answer
 type User struct{
     ID uint `gorm:"primaryKey" json:"id" example:"1"`
@@ -16,11 +22,24 @@ type CrosswordAnswer struct{
     
     UserID uint `json:"user_id,omitempty" swaggerignore:"true"`
     CrosswordID uint `json:"crossword_id" example:"1"`
-    Answers []UnitClue `gorm:"type:jsonb" json:"answers"`
+    Answers Answers `gorm:"type:jsonb" json:"answers"`
 }
 
 // @Description A singular clue with its index
 type UnitClue struct{
     ClueID int `example:"1"`
     ClueText string `example:"APPLE"`
+}
+
+type Answers []UnitClue
+
+func (a Answers) Value() (driver.Value, error) {
+    return json.Marshal(a)
+}
+func (a *Answers) Scan(value interface{}) error {
+    bytes, ok := value.([]byte)
+    if !ok {
+        log.Println("failed to scan Answers: value is not []byte")
+    }
+    return json.Unmarshal(bytes, a)
 }
