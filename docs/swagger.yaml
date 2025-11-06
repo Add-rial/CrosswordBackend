@@ -270,6 +270,42 @@ paths:
       summary: Get today's crossword
       tags:
       - Crossword
+  /getsolution:
+    post:
+      consumes:
+      - application/json
+      description: Fetches both the crossword question (grid, clues, etc.) and the
+        corresponding solution for a given crossword ID.
+      parameters:
+      - description: ID of the crossword to fetch
+        in: body
+        name: crossword_id
+        required: true
+        schema:
+          type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Crossword and solution successfully fetched
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad request or solution not found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal server error while reading files
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get Crossword and Solution
+      tags:
+      - Crossword
   /leaderboard:
     get:
       description: Returns a list of users sorted by score in descending order

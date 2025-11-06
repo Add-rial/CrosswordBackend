@@ -20,9 +20,10 @@ type User struct{
 type CrosswordAnswer struct{
     ID uint `gorm:"primaryKey" json:"id,omitempty" swaggerignore:"true" example:"1"`
     
-    UserID uint `json:"user_id,omitempty" swaggerignore:"true"`
-    CrosswordID uint `json:"crossword_id" example:"1"`
+    UserID uint `json:"user_id,omitempty" swaggerignore:"true" gorm:"uniqueIndex:idx_user_crossword"`
+    CrosswordID uint `json:"crossword_id" gorm:"uniqueIndex:idx_user_crossword" example:"1"`
     Answers Answers `gorm:"type:jsonb" json:"answers"`
+    Scored bool `gorm:"default:false" json:"-" swaggerignore:"true"`
 }
 
 // @Description A singular clue with its index

@@ -1,0 +1,45 @@
+{
+ 	"sol": [
+ 		{
+ 			"ClueID": 1,
+ 			"ClueText": "Clubs"
+ 		},
+ 		{
+ 			"ClueID": 2,
+ 			"ClueText": "_________"
+ 		},
+ 		{
+ 			"ClueID": 3,
+ 			"ClueText": "Rotunda"
+ 		},
+ 		{
+ 			"ClueID": 4,
+ 			"ClueText": "Meow"
+ 		},
+ 		{
+ 			"ClueID": 5,
+ 			"ClueText": "ClockTower"
+ 		},
+ 		{
+ 			"ClueID": 6,
+ 			"ClueText": "Cnot"
+ 		},
+ 		{
+ 			"ClueID": 7,
+ 			"ClueText": "SnakePath"
+ 		},
+ 		{
+ 			"ClueID": 8,
+ 			"ClueText": "StuCCa"
+ 		},
+ 		{
+ 			"ClueID": 9,
+ 			"ClueText": "Ghot"
+ 		},
+ 		{
+ 			"ClueID": 10,
+ 			"ClueText": "SharmaJi"
+ 		}
+ 	],
+ 	"crosswordid": 1
+ }

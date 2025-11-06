@@ -1,6 +1,8 @@
 package handlers
 
 import (
+	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"strings"
@@ -27,7 +29,18 @@ import (
 // @Failure 500 {object} map[string]string "Error updating crossword"
 // @Router /admin/updateCrossword [post]
 func UpdateCrossword(c *gin.Context){
-	services.Update(c, "crossword")
+	var body model.Crossword
+	if err := c.ShouldBindJSON(&body); err != nil{
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid parameters"})
+		return
+	}
+
+	filePath := fmt.Sprintf("data/day%d/crosswordJSON.json", body.CrosswordID)
+	jsonData, err := json.Marshal(body)
+	if err != nil{
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Unable to process data"})
+	}
+	services.Update(c, "crossword", jsonData, filePath)
 }
 
 // UpdateSolution godoc
@@ -44,7 +57,18 @@ func UpdateCrossword(c *gin.Context){
 // @Failure 500 {object} map[string]string "Error updating solution"
 // @Router /admin/updateSolution [post]
 func UpdateSolution(c *gin.Context){
-	services.Update(c, "solution")
+	var body model.CrosswordSolution
+	if err := c.ShouldBindJSON(&body); err != nil{
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid parameters"})
+		return
+	}
+
+	filePath := fmt.Sprintf("data/day%d/solutionJSON.json", body.Id)
+	jsonData, err := json.Marshal(body)
+	if err != nil{
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Unable to process data"})
+	}
+	services.Update(c, "solution", jsonData, filePath)
 }
 
 // UpdateScore godoc
@@ -60,7 +84,14 @@ func UpdateSolution(c *gin.Context){
 func UpdateScore(c *gin.Context){
 	log.Println("Running daily crossword scoring task...")
 
-	solution, crosswordid, err := services.LoadOfficialSolution()
+	var body struct{
+		CrosswordID uint `json:"crossword_id`
+	}
+	if err := c.ShouldBindJSON(&body); err != nil{
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid parameters"})
+	}
+
+	solution, crosswordid, err := services.LoadOfficialSolution(body.CrosswordID)
 	if err != nil{
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "Error loadind solutions"})
 	}
@@ -73,7 +104,7 @@ func UpdateScore(c *gin.Context){
 			panic(r)
 		}
 	}()
-	tx.Where("crossword_id = ?", crosswordid).Find(&answers)
+	tx.Where("crossword_id = ? AND scored = ?", crosswordid, false).Find(&answers)
 	log.Printf("Found %d crossword answers", len(answers))
 
 	solMap := make(map[int]string)
@@ -92,12 +123,11 @@ func UpdateScore(c *gin.Context){
             return
         }
 		
-        if err := tx.
-            Where("user_id = ? AND crossword_id = ?", ans.UserID, ans.CrosswordID).
-            Delete(&model.CrosswordAnswer{}).Error; err != nil {
-			log.Println(err)
+        if err := tx.Model(&ans).
+            Update("scored", true).Error; err != nil {
+            log.Println(err)
             tx.Rollback()
-            c.JSON(http.StatusInternalServerError, gin.H{"error": "Deletion failed"})
+            c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to mark as scored"})
             return
         }
 	}

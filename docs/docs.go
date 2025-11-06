@@ -289,6 +289,59 @@ const docTemplate = `{
                 }
             }
         },
+        "/getsolution": {
+            "post": {
+                "description": "Fetches both the crossword question (grid, clues, etc.) and the corresponding solution for a given crossword ID.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Crossword"
+                ],
+                "summary": "Get Crossword and Solution",
+                "parameters": [
+                    {
+                        "description": "ID of the crossword to fetch",
+                        "name": "crossword_id",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Crossword and solution successfully fetched",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request or solution not found",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error while reading files",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/leaderboard": {
             "get": {
                 "description": "Returns a list of users sorted by score in descending order",

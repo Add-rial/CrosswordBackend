@@ -3,13 +3,15 @@ package services
 import (
 	"CrosswordBackend/model"
 	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 	"strings"
 )
 
-func LoadOfficialSolution() ([]model.UnitClue, uint, error){
-	file, err := os.ReadFile("solutionJSON.json")
+func LoadOfficialSolution(crossword_id uint) ([]model.UnitClue, uint, error){
+	filePath := fmt.Sprintf("data/day%d/solutionJSON.json", crossword_id)
+	file, err := os.ReadFile(filePath)
 	if err != nil {
 		log.Println("Solutions haven't been uploaded")
 	}
