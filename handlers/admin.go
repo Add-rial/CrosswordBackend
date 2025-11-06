@@ -83,7 +83,6 @@ func UpdateScore(c *gin.Context){
 
 	for _, ans := range answers{
 		score := services.CompareAnswer(ans.Answers, solMap)
-		log.Printf("User %d: score to add = %d", ans.UserID, score)
 		if err := tx.Model(&model.User{}).
             Where("id = ?", ans.UserID).
             Update("score", gorm.Expr("score + ?", score)).Error; err != nil {
@@ -92,7 +91,7 @@ func UpdateScore(c *gin.Context){
             c.JSON(http.StatusInternalServerError, gin.H{"error": "Score update failed"})
             return
         }
-		log.Printf("Loaded crossword ID: %t | Answer crossword ID: %t", crosswordid, ans.CrosswordID)
+		
         if err := tx.
             Where("user_id = ? AND crossword_id = ?", ans.UserID, ans.CrosswordID).
             Delete(&model.CrosswordAnswer{}).Error; err != nil {
@@ -107,11 +106,5 @@ func UpdateScore(c *gin.Context){
 		return
 	}
 
-	var newAnswers []model.CrosswordAnswer
-	config.DB.Where("crossword_id = ?", crosswordid).Find(&newAnswers)
-	log.Printf("After commit: %d answers remaining", len(newAnswers))
-
-	var userInDB model.User
-	config.DB.Where("email = ?", "f20241298@pilani.bits-pilani.ac.in").First(&userInDB)
-	c.JSON(http.StatusOK, gin.H{"message": "Scores updated successfully", "Score": userInDB.Score})
+	c.JSON(http.StatusOK, gin.H{"message": "Scores updated successfully"})
 }

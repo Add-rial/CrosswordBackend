@@ -42,8 +42,6 @@ func main(){
 	router.POST("/auth/google", handlers.AuthWithGoogle)
 	router.GET("/leaderboard", handlers.GetLeaderboard)
 	router.GET("/crossword", handlers.GetCrossword)
-	router.POST("/score", handlers.ReturnScore)
-	router.GET("/see", handlers.SeeSubmittedCrossword)
 	submitcrossword := router.Group("/")
 	submitcrossword.Use(middleware.AuthMiddleware())
 	{
