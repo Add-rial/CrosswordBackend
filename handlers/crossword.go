@@ -71,7 +71,7 @@ func SubmitCrossword(c *gin.Context){
 	var existing model.CrosswordAnswer
     if err := config.DB.
         Where("user_id = ? AND crossword_id = ?", userID, input.CrosswordID).
-        First(&existing).Error; err == nil {
+        First(&existing).Error; err != nil {
         c.JSON(http.StatusBadRequest, gin.H{
             "error": "You have already submitted this crossword.",
         })
