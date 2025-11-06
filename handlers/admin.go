@@ -3,6 +3,7 @@ package handlers
 import (
 	"log"
 	"net/http"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
@@ -11,7 +12,6 @@ import (
 	"CrosswordBackend/model"
 	"CrosswordBackend/services"
 )
-
 
 // UpdateCrossword godoc
 // @Summary Upload or update the crossword puzzle
@@ -67,10 +67,21 @@ func UpdateScore(c *gin.Context){
 
 	var answers []model.CrosswordAnswer
 	config.DB.Where("crossword_id = ?", crosswordid).Find(&answers)
-	tx := config.DB.Begin()
 
+	solMap := make(map[int]string)
+	for _, clue := range solution {
+		solMap[clue.ClueID] = strings.TrimSpace(clue.ClueText)
+	}
+
+	tx := config.DB.Begin()
+	defer func() {
+		if r := recover(); r != nil {
+			tx.Rollback()
+			panic(r)
+		}
+	}()
 	for _, ans := range answers{
-		score := services.CompareAnswer(ans.Answers, solution)
+		score := services.CompareAnswer(ans.Answers, solMap)
 		if err := tx.Model(&model.User{}).
             Where("id = ?", ans.UserID).
             Update("score", gorm.Expr("score + ?", score)).Error; err != nil {
@@ -86,6 +97,10 @@ func UpdateScore(c *gin.Context){
             c.JSON(http.StatusInternalServerError, gin.H{"error": "Deletion failed"})
             return
         }
+	}
+	if err := tx.Commit().Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Commit failed"})
+		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "Scores updated successfully"})

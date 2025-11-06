@@ -22,11 +22,12 @@ func LoadOfficialSolution() ([]model.UnitClue, int, error){
 	return jsonExtacted.Sol, jsonExtacted.Id, err
 }
 
-func CompareAnswer(userAns []model.UnitClue, sol []model.UnitClue) int{
+func CompareAnswer(userAns []model.UnitClue, solMap map[int]string) int {
 	score := 0
-	for k, clue := range sol{
-		if strings.EqualFold(userAns[k].ClueText, clue.ClueText){
-			score += 1
+
+	for _, userClue := range userAns {
+		if strings.EqualFold(strings.TrimSpace(userClue.ClueText),strings.TrimSpace(solMap[userClue.ClueID]),) {
+			score++
 		}
 	}
 	return score
