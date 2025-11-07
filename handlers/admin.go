@@ -89,11 +89,13 @@ func UpdateScore(c *gin.Context){
 	}
 	if err := c.ShouldBindJSON(&body); err != nil{
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid parameters"})
+		return
 	}
 
 	solution, crosswordid, err := services.LoadOfficialSolution(body.CrosswordID)
 	if err != nil{
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "Error loadind solutions"})
+		return
 	}
 
 	var answers []model.CrosswordAnswer

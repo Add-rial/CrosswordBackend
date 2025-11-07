@@ -14,12 +14,14 @@ func LoadOfficialSolution(crossword_id uint) ([]model.UnitClue, uint, error){
 	file, err := os.ReadFile(filePath)
 	if err != nil {
 		log.Println("Solutions haven't been uploaded")
+		return nil, 0, err
 	}
 
 	var jsonExtacted model.CrosswordSolution
 	err = json.Unmarshal(file, &jsonExtacted)
 	if err != nil {
 		log.Println("Error extracting soln:")
+		return nil, 0, err
 	}
 	return jsonExtacted.Sol, jsonExtacted.Id, err
 }
