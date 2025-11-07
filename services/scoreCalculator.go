@@ -10,7 +10,8 @@ import (
 )
 
 func LoadOfficialSolution(crossword_id uint) ([]model.UnitClue, uint, error){
-	filePath := fmt.Sprintf("data/day%d/solutionJSON.json", crossword_id)
+	wd, _ := os.Getwd()
+	filePath := fmt.Sprintf("%s/data/day%d/solutionJSON.json", wd, crossword_id)
 	file, err := os.ReadFile(filePath)
 	if err != nil {
 		log.Println("Solutions haven't been uploaded")
