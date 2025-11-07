@@ -15,10 +15,10 @@ func CrosswordGenerator(){
 	}
 	defer file.Close()
 
-	rows := 14
-	columns := 13
-	acrossClues := 6
-	downClues := 4
+	rows := 20
+	columns := 17
+	acrossClues := 9
+	downClues := 9
 	id := config.DAY
 
 

@@ -1,809 +1,1485 @@
 {
  	"Clues": {
  		"Across": [
-        {
-            "ClueID": 1,
-            "ClueText": "To pursue your interests or to shitpost irl"
-        },
-        {
-            "ClueID": 4,
-            "ClueText": "not the cat sound"
-        },
-        {
-            "ClueID": 6,
-            "ClueText": "a place we share with delhi"
-        },
-        {
-            "ClueID": 7,
-            "ClueText": "___ path"
-        },
-        {
-            "ClueID": 8,
-            "ClueText": "heads of the cultural fest of bits pilani"
-        },
-        {
-            "ClueID": 10,
-            "ClueText": "iconic eatery owner"
-        }
-		],
-		"Down": [
-			{
-				"ClueID": 2,
-				"ClueText": "associated w infamous math prof"
-			},
-			{
-				"ClueID": 3,
-				"ClueText": "couple central"
-			},
-			{
-				"ClueID": 5,
-				"ClueText": "landmark of bits pilani"
-			},
-			{
-				"ClueID": 9,
-				"ClueText": "topper lingo"
-			}
-		]
+ 			{
+ 				"ClueID": 2,
+ 				"ClueText": "Fermented soyabean"
+ 			},
+ 			{
+ 				"ClueID": 4,
+ 				"ClueText": "Rice wine"
+ 			},
+ 			{
+ 				"ClueID": 5,
+ 				"ClueText": "Just like paneer"
+ 			},
+ 			{
+ 				"ClueID": 6,
+ 				"ClueText": "Filled dough, steamed, boiled, or pan-fried"
+ 			},
+ 			{
+ 				"ClueID": 9,
+ 				"ClueText": "Bite-sized Cantonese dishes served in steamer baskets"
+ 			},
+ 			{
+ 				"ClueID": 13,
+ 				"ClueText": "Japanese soup with broth and toppings"
+ 			},
+ 			{
+ 				"ClueID": 14,
+ 				"ClueText": "Ceremonial paper folding"
+ 			},
+ 			{
+ 				"ClueID": 16,
+ 				"ClueText": "Killer Notebook"
+ 			},
+ 			{
+ 				"ClueID": 17,
+ 				"ClueText": "Place of worship for followers of Shinto"
+ 			}
+ 		],
+ 		"Down": [
+ 			{
+ 				"ClueID": 1,
+ 				"ClueText": "minimalistic poetry form, often 5-7 syllables"
+ 			},
+ 			{
+ 				"ClueID": 3,
+ 				"ClueText": "Long strands symbolizing longevity"
+ 			},
+ 			{
+ 				"ClueID": 4,
+ 				"ClueText": "Vinegared rice with seafood"
+ 			},
+ 			{
+ 				"ClueID": 7,
+ 				"ClueText": "Studio embroiled in AI controversy"
+ 			},
+ 			{
+ 				"ClueID": 8,
+ 				"ClueText": "Martial Art of 'gentle way'"
+ 			},
+ 			{
+ 				"ClueID": 10,
+ 				"ClueText": "Nepalese origin, love by Delhiites"
+ 			},
+ 			{
+ 				"ClueID": 11,
+ 				"ClueText": "Hand-drawn, B&W sequential art- comics"
+ 			},
+ 			{
+ 				"ClueID": 12,
+ 				"ClueText": "traumatic flashback meme"
+ 			},
+ 			{
+ 				"ClueID": 15,
+ 				"ClueText": "Spirited Away director"
+ 			}
+ 		]
  	},
- 	"Rows": 14,
- 	"Columns": 13,
+ 	"Rows": 20,
+ 	"Columns": 17,
  	"Grid": [
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": 1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": 2
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": 3
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": 4
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": 5
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": 6
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": 7
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": false,
-                "NumberAssociated": 8
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": 9
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": 10
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ],
-        [
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": false,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            },
-            {
-                "IsBlank": true,
-                "NumberAssociated": -1
-            }
-        ]
-    ],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 2
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 3
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 4
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 5
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 6
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 7
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 8
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 9
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 10
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 11
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 13
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 14
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 16
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		],
+ 		[
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": 17
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": false,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			},
+ 			{
+ 				"IsBlank": true,
+ 				"NumberAssociated": -1
+ 			}
+ 		]
+ 	],
  	"CrosswordID": 1
  }
