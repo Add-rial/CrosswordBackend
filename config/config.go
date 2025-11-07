@@ -17,6 +17,7 @@ var(
 	JwtKey []byte
 	AdminKey string
 	GoogleClientID string
+	DAY uint = 1
 )
 
 func InitDB(){

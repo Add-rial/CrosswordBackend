@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"CrosswordBackend/model"
+	"CrosswordBackend/config"
 )
 
 func CrosswordGenerator(){
@@ -18,7 +19,7 @@ func CrosswordGenerator(){
 	columns := 13
 	acrossClues := 6
 	downClues := 4
-	id := 1
+	id := config.DAY
 
 
 	templateCrossword := model.Crossword{}
@@ -63,7 +64,7 @@ func SolutionGenerator(){
 	clues := 10
 	var templateSolution model.CrosswordSolution
 	templateSolution.Sol = make([]model.UnitClue, clues)
-	templateSolution.Id = 1
+	templateSolution.Id = config.DAY
 
 	for i := 0; i < clues; i++{
 		templateSolution.Sol[i].ClueID = i + 1

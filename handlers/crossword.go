@@ -21,7 +21,7 @@ import (
 // @Failure 500 {object} map[string]string "Crossword not found or parse error"
 // @Router /crossword [get]
 func GetCrossword(c *gin.Context){
-	filePath := "data/day1/crosswordJSON.json"
+	filePath := fmt.Sprintf("data/day%d/crosswordJSON.json", config.DAY)
 	file, err := os.ReadFile(filePath)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Crossword not found"})

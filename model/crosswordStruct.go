@@ -15,7 +15,7 @@ type Crossword struct{
     Rows int
     Columns int
     Grid [][]Cell
-    CrosswordID int
+    CrosswordID uint
 }
 
 type TokenSample struct{
