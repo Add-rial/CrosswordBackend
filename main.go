@@ -12,10 +12,10 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/swaggo/files"
-	"github.com/swaggo/gin-swagger"
+	//"github.com/swaggo/files"
+	//"github.com/swaggo/gin-swagger"
 
-	"CrosswordBackend/docs"
+	//"CrosswordBackend/docs"
 
 	"CrosswordBackend/config"
 	"CrosswordBackend/handlers"
@@ -28,14 +28,14 @@ func main(){
 
 	router := gin.Default()
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"https://crosswordbycc.netlify.app", "http://localhost:8080", "http://localhost:5176"},
+		AllowOrigins:     []string{"https://crosswordbycc.netlify.app", "https://crosswordbycc.vercel.app"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization", "X-Admin-Key"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
 
-	docs.SwaggerInfo.BasePath = "/"
+	//docs.SwaggerInfo.BasePath = "/"
 
 	router.POST("/users/register", handlers.RegisterUser)
 	router.POST("/users/login", handlers.LoginUser)
@@ -55,8 +55,8 @@ func main(){
 		admin.POST("/update-scores", handlers.UpdateScore)
 		admin.POST("/update-solution", handlers.UpdateSolution)
 	}
-	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-	router.GET("/", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	//router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	//router.GET("/", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 
 	log.Fatal(router.Run(":8080"))
