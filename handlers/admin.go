@@ -85,7 +85,7 @@ func UpdateScore(c *gin.Context){
 	log.Println("Running daily crossword scoring task...")
 
 	var body struct{
-		CrosswordID uint `json:"crossword_id`
+		CrosswordID uint `json:"crossword_id"`
 	}
 	if err := c.ShouldBindJSON(&body); err != nil{
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid parameters"})
