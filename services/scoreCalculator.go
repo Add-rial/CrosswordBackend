@@ -26,13 +26,19 @@ func LoadOfficialSolution(crossword_id uint) ([]model.UnitClue, uint, error){
 	return jsonExtacted.Sol, jsonExtacted.Id, err
 }
 
-func CompareAnswer(userAns []model.UnitClue, solMap map[int]string) int {
+func CompareAnswer(userAns []model.UnitClue, solMap map[int]string) (int, bool) {
 	score := 0
+	allCorrect := true
 
 	for _, userClue := range userAns {
 		if strings.EqualFold(strings.TrimSpace(userClue.ClueText),strings.TrimSpace(solMap[userClue.ClueID]),) {
-			score++
+			score += len(strings.TrimSpace(solMap[userClue.ClueID])) 
+		}else{
+			allCorrect = false
 		}
 	}
-	return score
+	if len(userAns) != len(solMap){
+		allCorrect = false
+	}
+	return score, allCorrect
 }

@@ -115,7 +115,10 @@ func UpdateScore(c *gin.Context){
 	}
 
 	for _, ans := range answers{
-		score := services.CompareAnswer(ans.Answers, solMap)
+		score, allCorrect := services.CompareAnswer(ans.Answers, solMap)
+		if allCorrect {
+			score += ans.TimeLeft
+		}
 		if err := tx.Model(&model.User{}).
             Where("id = ?", ans.UserID).
             Update("score", gorm.Expr("score + ?", score)).Error; err != nil {

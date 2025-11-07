@@ -20,7 +20,7 @@ import (
 func GetLeaderboard(c *gin.Context){
 	var leaderboard []model.User
 	
-	result := config.DB.Order("score desc").Find(&leaderboard)
+	result := config.DB.Order("score desc").Limit(10).Find(&leaderboard)
 	
 	if result.Error != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Database error while fetching leaderboard"})

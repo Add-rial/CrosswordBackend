@@ -24,6 +24,7 @@ type CrosswordAnswer struct{
     CrosswordID uint `json:"crossword_id" gorm:"uniqueIndex:idx_user_crossword" example:"1"`
     Answers Answers `gorm:"type:jsonb" json:"answers"`
     Scored bool `gorm:"default:false" json:"-" swaggerignore:"true"`
+    TimeLeft int `json:"time_left" example:"137"`
 }
 
 // @Description A singular clue with its index
