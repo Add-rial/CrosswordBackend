@@ -16,6 +16,7 @@ import (
 	//"github.com/swaggo/gin-swagger"
 
 	//"CrosswordBackend/docs"
+	// "CrosswordBackend/services"
 
 	"CrosswordBackend/config"
 	"CrosswordBackend/handlers"
@@ -23,6 +24,9 @@ import (
 )
 
 func main(){
+	// services.CrosswordGenerator()
+	// services.SolutionGenerator()
+
 	config.InitEnv()
 	config.InitDB()
 
