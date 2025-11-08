@@ -26,19 +26,46 @@ func LoadOfficialSolution(crossword_id uint) ([]model.UnitClue, uint, error){
 	return jsonExtacted.Sol, jsonExtacted.Id, err
 }
 
-func CompareAnswer(userAns []model.UnitClue, solMap map[int]string) (int, bool) {
+func CompareAnswer(userAns []model.UnitClue, solMap map[int][]string) (int, bool) {
 	score := 0
 	allCorrect := true
 
+	used := make(map[int][]bool)
+	for id, answers := range solMap {
+		used[id] = make([]bool, len(answers))
+	}
+
 	for _, userClue := range userAns {
-		if strings.EqualFold(strings.TrimSpace(userClue.ClueText),strings.TrimSpace(solMap[userClue.ClueID]),) {
-			score += len(strings.TrimSpace(solMap[userClue.ClueID])) 
-		}else{
+		userText := strings.TrimSpace(userClue.ClueText)
+		correctAnswers, exists := solMap[userClue.ClueID]
+		if !exists {
+			allCorrect = false
+			continue
+		}
+
+		matchFound := false
+		for i, sol := range correctAnswers {
+			if !used[userClue.ClueID][i] &&
+				strings.EqualFold(userText, strings.TrimSpace(sol)) {
+				score += len(sol)
+				used[userClue.ClueID][i] = true
+				matchFound = true
+				break
+			}
+		}
+
+		if !matchFound {
 			allCorrect = false
 		}
 	}
-	if len(userAns) != len(solMap){
-		allCorrect = false
+	
+	for id, answers := range solMap {
+		for i := range answers {
+			if !used[id][i] {
+				allCorrect = false
+			}
+		}
 	}
+
 	return score, allCorrect
 }

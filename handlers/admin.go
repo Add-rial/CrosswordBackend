@@ -109,9 +109,10 @@ func UpdateScore(c *gin.Context){
 	tx.Where("crossword_id = ? AND scored = ?", crosswordid, false).Find(&answers)
 	log.Printf("Found %d crossword answers", len(answers))
 
-	solMap := make(map[int]string)
+	solMap := make(map[int][]string)
 	for _, clue := range solution {
-		solMap[clue.ClueID] = strings.TrimSpace(clue.ClueText)
+		trimmed := strings.TrimSpace(clue.ClueText)
+		solMap[clue.ClueID] = append(solMap[clue.ClueID], trimmed)
 	}
 
 	for _, ans := range answers{
